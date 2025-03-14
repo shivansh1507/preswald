@@ -16,14 +16,14 @@ df = load_data()
 
 # Check if the dataset loaded properly
 if df.empty:
-    text("⚠️ Error loading data. Please check the data source.")
+    text(" Error loading data. Please check the data source.")
 else:
     text("Covid Data Loaded Successfully!")
     table(df.head(10), title="Sample COVID-19 Data")
 
     # Ensure required columns exist
     if "total_cases" not in df.columns or "new_cases" not in df.columns:
-        text("⚠️ Missing required columns: `total_cases` or `new_cases`. Check your dataset!")
+        text(" Missing required columns: `total_cases` or `new_cases`. Check your dataset!")
     else:
         # Slider to filter by total cases
         min_cases = slider(
